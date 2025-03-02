@@ -125,12 +125,10 @@ namespace FileSystem {
   }
 
   void cat(String name){
-    if(!exists(name)){
-      return;
-    }
     for(Node & node :  FileSystem::nodes){
       if(node.dir == FileSystem::cf && node.name == name && node.type == FILE_NODE){
-        Serial.println(node.content);
+        Serial.print(node.content);
+        break;
       }
     }
   }
